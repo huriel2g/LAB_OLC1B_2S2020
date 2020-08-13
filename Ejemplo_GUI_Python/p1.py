@@ -1,3 +1,10 @@
+'''
+		Aux. Huriel Gómez - 12/08/2020
+		Interfaz grafica con Python y Tkinter
+'''
+
+
+
 from tkinter import *               # ventana
 from tkinter import Menu            # barra de tareas
 from tkinter import filedialog      # filechooser
