@@ -1,7 +1,7 @@
-'''
-		Aux. Huriel Gómez - 12/08/2020
-		Interfaz grafica con Python y Tkinter
-'''
+''' ****************************************************
+******** Aux. Huriel Gómez - OLC1 - 12/08/2020 *********
+******** Interfaz grafica con Python y Tkinter *********
+**************************************************** '''
 
 
 
