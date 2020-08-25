@@ -1,0 +1,37 @@
+Expresiones Regulares
+
+letra: [a-zA-Z]
+numero: [0-9]
+
+//Expresiones regulares para valores a asignar o id's
+id     -> ('#')? letra (letra |numero|'-')*
+enteros -> (numero)+ ('px')?
+
+
+//palabras reservadas
+color       : 'color'
+fsize       : 'font-size'
+pos         : 'position'
+top         : 'top'
+back_color  : 'background-color'
+marginTop   : 'margin-top'
+
+
+//Simbolos del lenguaje
+'{' : llaveIzq
+'}' : llaveDer
+':' : dpuntos
+';' : pcoma
+',' : coma
+
+
+
+
+[Token]       [Informal Description]                  [Sample Lexemes]
+if            characters i, f                         if
+else          characters e, l, s, e                   else
+comparison    < or > or <= or >= or == or !=          <=, !=
+id            letter followed by letters and digits   pi, score, D2
+number        any numeric constant                    3.14159, 0, 6.02e23
+literal       anything but ", surrounded by "'s       "core dumped"
+

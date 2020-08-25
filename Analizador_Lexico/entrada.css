@@ -1,0 +1,15 @@
+#header h1, h2{ 
+        color: yellow;
+        font-size: 4;
+        position: absolute;
+        top: 600px;
+}
+
+div {
+    background-color:#dddddd;
+    color: gray
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+}
