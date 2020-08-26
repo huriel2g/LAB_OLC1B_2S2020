@@ -34,4 +34,3 @@ comparison    < or > or <= or >= or == or !=          <=, !=
 id            letter followed by letters and digits   pi, score, D2
 number        any numeric constant                    3.14159, 0, 6.02e23
 literal       anything but ", surrounded by "'s       "core dumped"
-

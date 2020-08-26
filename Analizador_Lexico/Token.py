@@ -18,7 +18,7 @@ class Tipo(Enum):
     MARGIN_TOP = 11
 
     # Expresiones Regulares
-    ENTEROS = 12
+    VALOR = 12
     ID = 13
     NINGUNO = 14
 

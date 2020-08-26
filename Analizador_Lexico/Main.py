@@ -5,7 +5,6 @@ from tkinter import scrolledtext    # textarea
 from tkinter import messagebox      # message box
 from AnalisisLexico import Scanner           # llamando a una funcion externa
 
-
 class GUI:
     # Metodo que contiene la definicion de la interfaz grafica 
     def __init__(self):
