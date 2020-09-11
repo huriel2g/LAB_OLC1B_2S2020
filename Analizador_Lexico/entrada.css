@@ -1,8 +1,17 @@
-#header h1, h2{ 
+
+
+#header
+
+S0 -#-> S1
+S1 -h-> S2
+S1 -e-> S2
+
+
+h1, h2{ 
         color: yellow;
         font-size: 4;
         position: absolute;
-        top: 600px;
+        top: 600p#x;
 }
 
 div {

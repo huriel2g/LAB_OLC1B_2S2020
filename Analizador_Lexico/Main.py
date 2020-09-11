@@ -4,7 +4,7 @@ from tkinter import filedialog      # filechooser
 from tkinter import scrolledtext    # textarea
 from tkinter import messagebox      # message box
 from AnalisisLexico import Scanner           # llamando a una funcion externa
-
+from AnalisisSintactico import Parser
 class GUI:
     # Metodo que contiene la definicion de la interfaz grafica 
     def __init__(self):
@@ -56,7 +56,11 @@ class GUI:
     def Analyze(self):
         entrada = self.txtEntrada.get("1.0", END) #fila 1 col 0 hasta fila 2 col 10
         miScanner = Scanner()
-        retorno = miScanner.analizar(entrada)
+        retorno = miScanner.analizar(entrada) #A. Lexico
+        tokens = miScanner.getListaTokens()
+        miParser = Parser(tokens)
+        retorno += "\n"+ miParser.begin()
+        
         self.txtConsola.delete("1.0", END)
         self.txtConsola.insert("1.0", retorno)
         messagebox.showinfo('Project 1', 'Analysis Finished')

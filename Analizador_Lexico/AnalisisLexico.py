@@ -2,8 +2,6 @@ from Token import Token
 from Token import Tipo
 # from NOMBRE.PY import CLASE|METODO|ENUM
 
-def hola():
-    print("")
 
 class Scanner:
     lista_tokens = list()   # lista de tokens
@@ -18,6 +16,9 @@ class Scanner:
         self.pos_errores = list()
         self.estado = 0
         self.lexema = ""
+
+    def getListaTokens(self):
+        return self.lista_tokens
 
     #--------------------------- ESTADO0 ---------------------------
     def analizar(self, cadena):
@@ -136,19 +137,19 @@ class Scanner:
             self.addToken(Tipo.COLOR, "color")
             return
         elif(self.lexema.lower() == "font-size"):
-            self.addToken(Tipo.COLOR, "font-size")
+            self.addToken(Tipo.FSIZE, "font-size")
             return
         elif(self.lexema.lower() == "position"):
-            self.addToken(Tipo.COLOR, "position")
+            self.addToken(Tipo.POS, "position")
             return
         elif(self.lexema.lower() == "top"):
-            self.addToken(Tipo.COLOR, "top")
+            self.addToken(Tipo.TOP, "top")
             return
         elif(self.lexema.lower() == "background-color"):
-            self.addToken(Tipo.COLOR, "background-color")
+            self.addToken(Tipo.BACK_COLOR, "background-color")
             return
         elif(self.lexema.lower() == "margin-top"):
-            self.addToken(Tipo.COLOR, "margin-top")
+            self.addToken(Tipo.MARGIN_TOP, "margin-top")
             return
 
         self.lexema = ""
