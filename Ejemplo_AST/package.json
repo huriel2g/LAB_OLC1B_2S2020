@@ -1,0 +1,18 @@
+{
+  "name": "ejemplo_jjs",
+  "version": "1.0.0",
+  "description": "ejemplo project2 olc1 2s2020",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Huriel Gomez, hurieluv2g2d93@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jison": "^0.4.18",
+    "typescript": "^4.0.3"
+  }
+}
