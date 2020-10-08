@@ -14,11 +14,12 @@ class While extends Instruccion_1.Instruccion {
         this.condicion = condicion;
         this.instrucciones = instrucciones;
     }
-    execute(ts, arbol) {
-        return null;
-    }
     translate() {
-        return null;
+        let cadena = "mientras(" + this.condicion.translate() + "){\n";
+        for (const ins of this.instrucciones) {
+            cadena += ins.translate();
+        }
+        return cadena + "\n}\n";
     }
     generarGrafo(g, padre) {
         let p = padre;

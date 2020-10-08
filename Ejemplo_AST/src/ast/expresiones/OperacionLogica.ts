@@ -1,6 +1,4 @@
-import { Instruccion } from "../Instruccion"
-import { AST } from "../AST"
-import { TablaSimbolos } from "../TablaSimbolos";
+import { Instruccion } from "../Instruccion";
 import { TypeOperation } from "../Tipo";
 
 export class OperacionLogica extends Instruccion {
@@ -22,11 +20,16 @@ export class OperacionLogica extends Instruccion {
         this.tipoOperacion = tipoOperacion;
     }
 
-    execute(ts: TablaSimbolos, arbol: AST) {
-        return null;
-    }
     translate() {
-        return null;
+        switch(this.tipoOperacion){
+            case TypeOperation.AND:
+                return this.operador1.translate()+" and "+ this.operador2.translate();
+            case TypeOperation.OR:
+                return this.operador1.translate()+" or "+ this.operador2.translate();
+            case TypeOperation.NOT:
+                return " not "+ this.operador1.translate();
+        }
+        return "";
     }
     generarGrafo(g, padre) {
         //Operador1

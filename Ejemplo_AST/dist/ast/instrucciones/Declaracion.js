@@ -16,18 +16,18 @@ class Declaracion extends Instruccion_1.Instruccion {
         this.type = type;
         this.valor = valor;
     }
-    execute(ts, arbol) {
-        return null;
-    }
     translate() {
-        return null;
+        // int a = 0;
+        return "var " + this.id + " = " + this.valor.translate() + ";\n";
     }
     generarGrafo(g, padre) {
+        let padreAux = padre; //Auxiar con nombre del padre
         //Tipo
         let nombreHijo = "nodo" + g.contador;
         g.grafo += "  " + nombreHijo + "[label=\" Tipo: " + this.type.toString() + "\"];\n";
         g.grafo += "  " + padre + " -> " + nombreHijo + ";\n";
         g.contador++;
+        // Id
         nombreHijo = "nodo" + g.contador;
         g.grafo += "  " + nombreHijo + "[label=\"ID\"];\n";
         g.grafo += "  " + padre + " -> " + nombreHijo + ";\n";
@@ -35,6 +35,12 @@ class Declaracion extends Instruccion_1.Instruccion {
         let padreHijo = nombreHijo;
         //Identificador
         nombreHijo = "nodo" + g.contador;
+        /*let losIds = ""
+        for(let i = 0; i<listaIds.length; i++){
+            losIds += listaIds[i]+",";
+        }
+        g.grafo += "  " + nombreHijo + "[label=\" Id: " + losIds + "\"];\n";
+        */
         g.grafo += "  " + nombreHijo + "[label=\" Id: " + this.id + "\"];\n";
         g.grafo += "  " + padreHijo + " -> " + nombreHijo + ";\n";
         g.contador++;

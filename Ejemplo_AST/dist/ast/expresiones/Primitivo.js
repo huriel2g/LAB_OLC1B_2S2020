@@ -12,11 +12,8 @@ class Primitivo extends Instruccion_1.Instruccion {
         super(line, column);
         this.valor = valor;
     }
-    execute(ts, arbol) {
-        return null;
-    }
     translate() {
-        return null;
+        return this.valor;
     }
     generarGrafo(g, padre) {
         let nombreHijo = "nodo" + g.contador;

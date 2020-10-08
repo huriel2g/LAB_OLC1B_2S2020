@@ -1,6 +1,4 @@
 import { Instruccion } from "../Instruccion"
-import { AST } from "../AST"
-import { TablaSimbolos } from "../TablaSimbolos";
 import { ValorGrafo } from "../grafo/ValorGrafo";
 
 export class While extends Instruccion {
@@ -19,11 +17,12 @@ export class While extends Instruccion {
         this.instrucciones = instrucciones;
     }
 
-    execute(ts: TablaSimbolos, arbol: AST) {
-        return null;
-    }
     translate() {
-        return null;
+        let cadena = "mientras("+this.condicion.translate()+"){\n";
+        for (const ins of this.instrucciones) {
+            cadena += ins.translate();
+        }
+        return cadena+"\n}\n";
     }
 
     generarGrafo(g: ValorGrafo, padre: String) {

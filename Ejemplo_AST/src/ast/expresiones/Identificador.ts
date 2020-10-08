@@ -1,6 +1,4 @@
-import { Instruccion } from "../Instruccion"
-import { AST } from "../AST"
-import { TablaSimbolos } from "../TablaSimbolos";
+import { Instruccion } from "../Instruccion";
 import { ValorGrafo } from "../grafo/ValorGrafo";
 
 export class Identificador extends Instruccion {
@@ -16,11 +14,8 @@ export class Identificador extends Instruccion {
         this.id = id;
     }
 
-    execute(ts: TablaSimbolos, arbol: AST) {
-        return null;
-    }
     translate() {
-        return null;
+        return this.id;
     }
     generarGrafo(g: ValorGrafo, padre: String) {
         let nombreHijo = "nodo"+g.contador;

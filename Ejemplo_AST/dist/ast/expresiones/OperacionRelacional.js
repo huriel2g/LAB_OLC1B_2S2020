@@ -17,11 +17,14 @@ class OperacionRelacional extends Instruccion_1.Instruccion {
         this.operador2 = operador2;
         this.tipoOperacion = tipoOperacion;
     }
-    execute(ts, arbol) {
-        return null;
-    }
     translate() {
-        return null;
+        switch (this.tipoOperacion) {
+            case Tipo_1.TypeOperation.MAYOR:
+                return this.operador1.translate() + " > " + this.operador2.translate();
+            case Tipo_1.TypeOperation.MENOR:
+                return this.operador1.translate() + " < " + this.operador2.translate();
+        }
+        return "";
     }
     generarGrafo(g, padre) {
         //Operador1
@@ -30,7 +33,6 @@ class OperacionRelacional extends Instruccion_1.Instruccion {
         g.grafo += "  " + padre + " -> " + nombreHijo + ";\n";
         g.contador++;
         this.operador1.generarGrafo(g, nombreHijo);
-        console.log("el operador es: " + this.operador2);
         //Operador2
         nombreHijo = "nodo" + g.contador;
         g.grafo += "  " + nombreHijo + "[label=\"" + this.operador2.getNombreHijo() + "\"];\n";

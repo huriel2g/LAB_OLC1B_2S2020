@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
     res.send(`Compiladores 1 - Sección B, http://localhost:${app.get('port')}`);
 });
 
-app.get('/analisis?', controller.analizar);
+app.get('/analisis', controller.analizar);
 app.post('/miAuxiliar', controller.miAuxiliar);
 
 export default app;

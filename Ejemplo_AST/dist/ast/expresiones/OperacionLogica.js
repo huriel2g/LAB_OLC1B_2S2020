@@ -17,11 +17,16 @@ class OperacionLogica extends Instruccion_1.Instruccion {
         this.operador2 = operador2;
         this.tipoOperacion = tipoOperacion;
     }
-    execute(ts, arbol) {
-        return null;
-    }
     translate() {
-        return null;
+        switch (this.tipoOperacion) {
+            case Tipo_1.TypeOperation.AND:
+                return this.operador1.translate() + " and " + this.operador2.translate();
+            case Tipo_1.TypeOperation.OR:
+                return this.operador1.translate() + " or " + this.operador2.translate();
+            case Tipo_1.TypeOperation.NOT:
+                return " not " + this.operador1.translate();
+        }
+        return "";
     }
     generarGrafo(g, padre) {
         //Operador1

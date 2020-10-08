@@ -6,11 +6,12 @@ class AST extends Instruccion_1.Instruccion {
         super(0, 0);
         this.instrucciones = instrucciones;
     }
-    execute(ts, arbol) {
-        return null;
-    }
     translate() {
-        return null;
+        let cadena = "";
+        for (let a = 0; a < this.instrucciones.length; a++) {
+            cadena += this.instrucciones[a].translate();
+        }
+        return cadena;
     }
     generarGrafo(g, padre) {
         //----------- LISTA DE INSTRUCCIONES -----------

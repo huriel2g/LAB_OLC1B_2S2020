@@ -1,6 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class ValorGrafo {
+    /**
+     *
+     * @param contador Contador de nodos
+     * @param grafo     Cadena que contiene el dot o el grafo
+     */
     constructor(contador, grafo) {
         this.contador = contador;
         this.grafo = grafo;

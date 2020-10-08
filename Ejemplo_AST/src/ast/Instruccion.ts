@@ -1,19 +1,24 @@
-import { TablaSimbolos } from '../ast/TablaSimbolos';
-import { AST } from '../ast/AST';
 import { ValorGrafo } from "./grafo/ValorGrafo"
 
 export abstract class Instruccion{
 
     public line:Number = 0;
     public column:Number = 0;
-    
-    constructor(line:Number, column:Number){
 
+    /**
+     * 
+     * @param line      Linea de la instruccion
+     * @param column    Columna de la instruccion
+     */
+    constructor(line:Number, column:Number){
+        this.line = line;
+        this.column = column;
     }
 
-    abstract execute(ts:TablaSimbolos, arbol:AST):any;
-    abstract translate():any;
-    //Para generar el ast
+    // Metodo en el cual se traduce el codigo
+    abstract translate():String;
+
+    // Metodos para la generacion del reporte del grafo
     abstract generarGrafo(g:ValorGrafo, padre:String):any;
     abstract getNombreHijo():String;
     

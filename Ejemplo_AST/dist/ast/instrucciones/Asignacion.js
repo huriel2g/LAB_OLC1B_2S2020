@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Instruccion_1 = require("../Instruccion");
 class Asignacion extends Instruccion_1.Instruccion {
     /**
+     *  a = 5;
      * @class La instruccion asignacion, modifica el valor de una variable en la tabla de simbolos
      * @param id identificador de la variable que se va a modificar
      * @param line linea donde se esata asignando el nuevo valor a la variable
@@ -14,11 +15,8 @@ class Asignacion extends Instruccion_1.Instruccion {
         this.id = id;
         this.valor = valor;
     }
-    execute(ts, arbol) {
-        return null;
-    }
     translate() {
-        return null;
+        return this.id + " = " + this.valor.translate() + ";\n";
     }
     generarGrafo(g, padre) {
         //Identificador

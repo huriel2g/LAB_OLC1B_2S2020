@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Instruccion_1 = require("../Instruccion");
 const Tipo_1 = require("../Tipo");
 class OperacionAritmetica extends Instruccion_1.Instruccion {
-    /**
+    /** 5 + 9
      * @class La expresion OperacionAritmetica, realiza la operacion aritmetica dependiendo del tipo que le sea asigando
      * @param line linea de la expresion
      * @param column columna de la expresion
@@ -17,11 +17,18 @@ class OperacionAritmetica extends Instruccion_1.Instruccion {
         this.operador2 = operador2;
         this.tipoOperacion = tipoOperacion;
     }
-    execute(ts, arbol) {
-        return null;
-    }
     translate() {
-        return null;
+        switch (this.tipoOperacion) {
+            case Tipo_1.TypeOperation.SUMA:
+                return this.operador1.translate() + " + " + this.operador2.translate();
+            case Tipo_1.TypeOperation.RESTA:
+                return this.operador1.translate() + " - " + this.operador2.translate();
+            case Tipo_1.TypeOperation.MULTIPLICACION:
+                return this.operador1.translate() + " * " + this.operador2.translate();
+            case Tipo_1.TypeOperation.DIVISION:
+                return this.operador1.translate() + " / " + this.operador2.translate();
+        }
+        return "";
     }
     generarGrafo(g, padre) {
         //Operador1

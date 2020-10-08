@@ -1,14 +1,12 @@
 import { Instruccion } from "../Instruccion"
-import { AST } from "../AST"
-import { TablaSimbolos } from "../TablaSimbolos";
-import { TypeOperation } from "../Tipo";
+import { Type, TypeOperation } from "../Tipo";
 import { ValorGrafo } from "../grafo/ValorGrafo";
 
 export class OperacionAritmetica extends Instruccion {
     operador1:Instruccion;
     operador2:Instruccion;
     tipoOperacion:TypeOperation;
-    /**
+    /** 5 + 9
      * @class La expresion OperacionAritmetica, realiza la operacion aritmetica dependiendo del tipo que le sea asigando
      * @param line linea de la expresion
      * @param column columna de la expresion
@@ -23,12 +21,20 @@ export class OperacionAritmetica extends Instruccion {
         this.tipoOperacion = tipoOperacion;
     }
 
-    execute(ts: TablaSimbolos, arbol: AST) {
-        return null;
-    }
     translate() {
-        return null;
+        switch(this.tipoOperacion){
+            case TypeOperation.SUMA:
+                return this.operador1.translate()+" + "+ this.operador2.translate();
+            case TypeOperation.RESTA:
+                return this.operador1.translate()+" - "+ this.operador2.translate();
+            case TypeOperation.MULTIPLICACION:
+                return this.operador1.translate()+" * "+ this.operador2.translate();
+            case TypeOperation.DIVISION:
+                return this.operador1.translate()+" / "+ this.operador2.translate();
+        }
+        return "";
     }
+    
     generarGrafo(g: ValorGrafo, padre: String) {
         //Operador1
         let nombreHijo = "nodo"+g.contador;

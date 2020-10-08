@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const Instruccion_1 = require("../Instruccion");
 class Print extends Instruccion_1.Instruccion {
-    /**
+    /** print("hola")
      * @class La instruccion print, imprime el valor de una expresion en consola
      * @param line linea de la instruccion print
      * @param column columna de la instruccion print
@@ -12,11 +12,8 @@ class Print extends Instruccion_1.Instruccion {
         super(line, column);
         this.expresion = expresion;
     }
-    execute(ts, arbol) {
-        return null;
-    }
     translate() {
-        return null;
+        return "imprimir(" + this.expresion.translate() + ");\n";
     }
     generarGrafo(g, padre) {
         let nombreHijo = "nodo" + g.contador;

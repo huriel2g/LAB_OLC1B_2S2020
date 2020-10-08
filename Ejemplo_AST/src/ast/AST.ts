@@ -1,6 +1,5 @@
 import { ValorGrafo } from "./grafo/ValorGrafo";
-import { Instruccion } from "./Instruccion"
-import { TablaSimbolos } from "./TablaSimbolos";
+import { Instruccion } from "./Instruccion";
 
 export class AST extends Instruccion {
     
@@ -13,11 +12,12 @@ export class AST extends Instruccion {
         this.instrucciones = instrucciones;
     }
 
-    execute(ts: TablaSimbolos, arbol: AST) {
-        return null;
-    }
-    translate() {
-        return null;
+    translate():String {
+        let cadena = "";
+        for(let a = 0;a < this.instrucciones.length; a++){
+            cadena += this.instrucciones[a].translate();
+        }
+        return cadena;
     }
 
     generarGrafo(g: ValorGrafo, padre: String) {

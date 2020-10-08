@@ -12,11 +12,8 @@ class Identificador extends Instruccion_1.Instruccion {
         super(line, column);
         this.id = id;
     }
-    execute(ts, arbol) {
-        return null;
-    }
     translate() {
-        return null;
+        return this.id;
     }
     generarGrafo(g, padre) {
         let nombreHijo = "nodo" + g.contador;

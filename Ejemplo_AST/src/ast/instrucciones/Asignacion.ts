@@ -1,12 +1,11 @@
 import { Instruccion } from "../Instruccion"
-import { AST } from "../AST"
-import { TablaSimbolos } from "../TablaSimbolos";
 import { ValorGrafo } from "../grafo/ValorGrafo";
 
 export class Asignacion extends Instruccion {
     id:String;
     valor:Instruccion;
     /**
+     *  a = 5;
      * @class La instruccion asignacion, modifica el valor de una variable en la tabla de simbolos
      * @param id identificador de la variable que se va a modificar
      * @param line linea donde se esata asignando el nuevo valor a la variable
@@ -19,11 +18,8 @@ export class Asignacion extends Instruccion {
         this.valor = valor;
     }
 
-    execute(ts: TablaSimbolos, arbol: AST) {
-        return null;
-    }
     translate() {
-        return null;
+        return this.id + " = " + this.valor.translate() + ";\n";
     }
     generarGrafo(g: ValorGrafo, padre: String) {
         

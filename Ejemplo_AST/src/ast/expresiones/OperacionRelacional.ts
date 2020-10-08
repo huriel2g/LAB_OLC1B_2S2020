@@ -1,6 +1,4 @@
-import { Instruccion } from "../Instruccion"
-import { AST } from "../AST"
-import { TablaSimbolos } from "../TablaSimbolos";
+import { Instruccion } from "../Instruccion";
 import { TypeOperation } from "../Tipo";
 import { ValorGrafo } from "../grafo/ValorGrafo";
 
@@ -23,12 +21,14 @@ export class OperacionRelacional extends Instruccion {
         this.tipoOperacion = tipoOperacion;
     }
 
-    execute(ts: TablaSimbolos, arbol: AST) {
-        return null;
-    }
-
     translate() {
-        return null;
+        switch(this.tipoOperacion){
+            case TypeOperation.MAYOR:
+                return this.operador1.translate()+" > "+ this.operador2.translate();
+            case TypeOperation.MENOR:
+                return this.operador1.translate()+" < "+ this.operador2.translate();
+        }
+        return "";
     }
 
     generarGrafo(g: ValorGrafo, padre: String) {
@@ -39,7 +39,6 @@ export class OperacionRelacional extends Instruccion {
         g.contador++;
         this.operador1.generarGrafo(g,nombreHijo);
         
-        console.log("el operador es: "+this.operador2);
         //Operador2
         nombreHijo = "nodo"+g.contador;
         g.grafo += "  "+nombreHijo +"[label=\""+this.operador2.getNombreHijo() + "\"];\n";

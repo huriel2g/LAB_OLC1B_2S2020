@@ -1,6 +1,4 @@
 import { Instruccion } from "../Instruccion"
-import { AST } from "../AST"
-import { TablaSimbolos } from "../TablaSimbolos";
 import { Type } from "../Tipo";
 import { ValorGrafo } from "../grafo/ValorGrafo";
 
@@ -24,11 +22,9 @@ export class Declaracion extends Instruccion {
         this.valor = valor;
     }
 
-    execute(ts: TablaSimbolos, arbol: AST) {
-        return null;
-    }
     translate() {
-        return null;
+        // int a = 0;
+        return "var "+ this.id+" = "+ this.valor.translate() +";\n";
     }
     generarGrafo(g: ValorGrafo, padre: String) {
         let padreAux = padre; //Auxiar con nombre del padre

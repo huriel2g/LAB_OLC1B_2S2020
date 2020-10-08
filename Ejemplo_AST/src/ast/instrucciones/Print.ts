@@ -1,11 +1,9 @@
 import { Instruccion } from "../Instruccion"
-import { AST } from "../AST"
-import { TablaSimbolos } from "../TablaSimbolos";
 import { ValorGrafo } from "../grafo/ValorGrafo"
 
 export class Print extends Instruccion {
     expresion:Instruccion;
-    /**
+    /** print("hola")
      * @class La instruccion print, imprime el valor de una expresion en consola
      * @param line linea de la instruccion print
      * @param column columna de la instruccion print
@@ -16,11 +14,8 @@ export class Print extends Instruccion {
         this.expresion = expresion;
     }
 
-    execute(ts: TablaSimbolos, arbol: AST) {
-        return null;
-    }
     translate() {
-        return null;
+        return "imprimir("+this.expresion.translate()+");\n";
     }
 
     generarGrafo(g: ValorGrafo, padre: String) {
