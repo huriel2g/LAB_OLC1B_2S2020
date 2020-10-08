@@ -1,7 +1,7 @@
 
-# Laboratorio de Compiladores 1 - Sección B
-# Aux. Huriel Gómez
-# 2do. Semestre 2020  
+## Laboratorio de Compiladores 1 - Sección B
+Aux. Huriel Gómez
+2do. Semestre 2020  
 
 
 # USO DE DOCKER EN MI APLICACION EN NODEJS
@@ -31,7 +31,7 @@ docker run: Crea el container
 	|- package.json		     (contiene la estructura basica de nuestro proyecto)
 
 
-CONFIGURACION DE TYPESCRIPT
+# CONFIGURACION DE TYPESCRIPT
 4) tsconfig.json 				-> Creamos el archivo con la configuracion basica de typescript
 5) Configuramos la ruta de los archivos
 
@@ -62,9 +62,10 @@ CONFIGURACION DE TYPESCRIPT
 
 # Para ejecutar la aplicacion
 descargar el codigo del repositorio, dentro de la carpeta tecleamos el comando: 
-npm install     -> descarga todas las librerias o dependencias que aparecene en el package.json
+npm install     -> descarga todas las librerias y/o dependencias que aparecene en el package.json
 
 ejecutamos la aplicacion con el comando: node dist
+consumimos la API: http://localhost:3000/analisis	-> Pueda que la API tenga errores, la estare revisando bien cuando tenga tiempo
 
 
 Entrada que se evalua (En la clase Analisis): 
