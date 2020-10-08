@@ -12,7 +12,7 @@ Descargamos la imagen de docker: docker pull ubuntu:18.04
 
 Creamos la carpeta para agregar nuestro proyecto:            
 
-docker run -v E:\AEjemploDocker:/miApp -p 3000:3000 --name "ejemplo" -it ubuntu:18.04 /bin/bash
+###docker run -v E:\AEjemploDocker:/miApp -p 3000:3000 --name "ejemplo" -it ubuntu:18.04 /bin/bash
 
 docker run: Crea el container
 
@@ -26,7 +26,7 @@ docker run: Crea el container
 
 
 
-# APLICION EN NODE UTILIZANDO TYPESCRIPT
+# APLICACIÓN EN NODE UTILIZANDO TYPESCRIPT
 1) npm init					            -> nos crea un json que contiene la configuracion basica del proyecto
 2) npm install -s typescript			-> instalamos typescript en nuestro proyecto
 3) creamos un arbol de directorios:
@@ -42,9 +42,10 @@ docker run: Crea el container
 	|- package.json		     (contiene la estructura basica de nuestro proyecto)
 
 
-# CONFIGURACION DE TYPESCRIPT
+### CONFIGURACION DE TYPESCRIPT
 4) tsconfig.json 				-> Creamos el archivo con la configuracion basica de typescript
 5) Configuramos la ruta de los archivos
+
 
 {
     
@@ -75,6 +76,7 @@ docker run: Crea el container
 
 
 
+
 6) npm install -s jison				-> analizador jison
 7) npm install -s express			-> express para el servidor	
 8) npm install -s comunicarse		-> ayuda a nuestro servidor a comunicarse con otro tipo de servidores	
@@ -95,15 +97,26 @@ consumimos la API: http://localhost:3000/analisis	-> Pueda que la API tenga erro
 
 
 Entrada que se evalua (En la clase Analisis): 
-        numeric a=0.0;
-        while(true){ 
-            a = "hola"+":)"+59.5*12.2+(10.9*12.12-56.56/0.1);
-            print(a+b||c>d);
-        }
+        
+	numeric a=0.0;
+        
+	while(true){ 
+            
+	    a = "hola"+":)"+59.5*12.2+(10.9*12.12-56.56/0.1);
+            
+	    print(a+b||c>d);
+        
+	}
+
 
 Traduccion generada:
-        var a = 0.0;
-        mientras(true){
-            a = hola + :) + 59.5 * 12.2 + 10.9 * 12.12 - 56.56 / 0.1;        
-            imprimir(a + b or c > d);
-        }
+        
+	var a = 0.0;
+        
+	mientras(true){
+            
+	    a = hola + :) + 59.5 * 12.2 + 10.9 * 12.12 - 56.56 / 0.1;        
+            
+	    imprimir(a + b or c > d);
+        
+	}
