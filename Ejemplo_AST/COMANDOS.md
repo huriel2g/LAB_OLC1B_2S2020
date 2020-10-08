@@ -4,7 +4,7 @@ Aux. Huriel Gómez
 2do. Semestre 2020  
 
 
-# USO DE DOCKER EN MI APLICACION EN NODEJS
+# TRABAJANDO MI APLICACION DENTRO DE MI CONTAINER DE DOCKER
 
 Descargamos la imagen de docker: docker pull ubuntu:18.04
 
