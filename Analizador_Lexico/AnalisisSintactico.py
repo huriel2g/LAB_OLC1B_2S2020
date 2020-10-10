@@ -9,6 +9,7 @@ class Parser:
         self.listaTokens = listT
         self.cont = 0
         self.bandera = True
+        
 
     def getToken(self):
         token = self.listaTokens[self.cont]

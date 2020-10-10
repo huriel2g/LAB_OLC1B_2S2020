@@ -108,7 +108,7 @@ INSTRUCCION :
 	| PRINT			{ $$ = $1; }
 	;
 
-DECLARACION : TIPO identificador igual EXPRESION pcoma { $$ = new Declaracion($1, $2, $4, this._$.first_line, this._$.first_column); }
+DECLARACION : TIPO identificador igual EXPRESION pcoma { $$= new Declaracion($1, $2, $4, this._$.first_line, this._$.first_column); }
 	;
 
 TIPO : numeric_ { $$ = Type.NUMERIC; }

@@ -1,0 +1,43 @@
+public class id { }
+public interface id { }
+
+public class id { CODIGO }
+public interface id { CODIGO }
+
+
+
+S -> LISTA_CLASES
+
+LISTA_CLASES -> LISTA_CLASES CLASE
+    | CLASE
+
+CLASE -> 'public' TIPO_CLASE id '{' SENTENCIAS_GLOBALES '}'
+    | 'public' TIPO_CLASE id '{' '}'
+
+TIPO_CLASE -> 'class'
+    | 'interface'
+
+SENTENCIAS_GLOBALES -> SENTENCIAS_GLOBALES SENTENCIAS_G
+        | SENTENCIAS_G
+
+SENTENCIAS_G -> FUNCION
+            | DECLARACION_VARIABLE
+
+FUNCION -> TIPO id ( LISTA_PARAMETROS ) BLOQUE_SENTENCIAS
+
+BLOQUE_SENTENCIAS -> { LISTA_SENTENCIAS }
+            | { }
+
+LISTA_SENTENCIAS -> LISTA_SENTENCIAS SENTECIAS
+    | SENTECIAS
+
+TIPO -> int
+    | String
+    | void
+
+SENTENCIAS -> WHILE
+    | DECLARACION_VARIABLE
+    | FOR
+    | RETURN
+
+WHILE -> 'while' ( EXPRESION ) { BLOQUE_SENTENCIAS }

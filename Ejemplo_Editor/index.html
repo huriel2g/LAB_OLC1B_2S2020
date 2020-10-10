@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Interprete 3D</title>
+    <!-- PERMITE UTILIZAR EL EDITOR ACE -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.8/ace.js"></script>
+    <!--<script type="text/javascript" src="ace/ace.js"></script>-->
+
+    <!-- UTILIZANDO BOOTSWATCH PARA DARLE ESTILO A NUESTRA PAGINA    
+        https://bootswatch.com/ 
+        En la pagina se pueden ver los estilos y ejemplos de codigo html para implementar
+
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cyborg/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
+    -->
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Calculadora</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <!-- BOTON: Llama al metodo Analizar dentro del main.js -->
+                <button type="button" class="btn btn-success" onclick="Analizar()">Calcular</button>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- CONSOLA DE ENTRADA -->
+    <br>
+    <h3>Entrada:</h3>
+    <div id="Editor" style="height: 300px;">
+        Evaluar[(5+5*5)];
+        Evaluar[(2+5*10/2)];
+    </div>
+
+    <!-- CONSOLA DE SALIDA -->
+    <br>
+    <h3>Console:</h3>
+    <div id="Console" style="height: 200px;"> </div>
+
+    <script type="text/javascript">
+        var editor = ace.edit("Editor");
+        //Agregando formato de C# al editor
+        editor.setTheme("ace/theme/cobalt");
+        editor.session.setMode("ace/mode/java");
+        editor.setFontSize("14px");
+
+        var consola = ace.edit("Console");
+
+    </script>
+
+
+
+    <!-- 
+    Se deben importar todos los archivos .js
+    para que se puedan usar en cualquier archivo .js
+    es como una declaracion global de cada uno de ellos 
+-->
+    <script src="src/main.js"></script>
+    <script src="src/Analizador/Analisis.js"></script>
+
+
+</body>
+
+</html>

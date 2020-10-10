@@ -8,6 +8,7 @@ from AnalisisSintactico import Parser
 class GUI:
     # Metodo que contiene la definicion de la interfaz grafica 
     def __init__(self):
+        
         self.window = Tk()
         self.txtEntrada = Entry(self.window,width=10)
         self.txtConsola = Entry(self.window,width=10)
