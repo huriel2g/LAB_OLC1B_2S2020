@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>[OLC1]Laboratorio-B</title>
+    <!-- UTILIZANDO BOOTSWATCH PARA DARLE ESTILO A NUESTRA PAGINA-->
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">[OLC1]Proyecto 2 - "B"</a>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <!-- BOTON: Llama al metodo Analizar dentro del main.js -->
+                <button type="button" class="btn btn-success" onclick="Traducir()">Traducir</button>
+            </ul>
+        </div>
+    </nav>
+
+    <form>
+        <fieldset>
+            <legend>Entrada</legend>
+            <div class="form-group">
+                <textarea class="form-control" id="txtin" rows="3"></textarea>
+            </div>
+            <legend>Salida</legend>
+            <div class="form-group">
+                <textarea class="form-control" id="txtout" rows="3"></textarea>
+            </div>
+        </fieldset>
+    </form>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/index.js"></script>
+    
+
+</body>
+
+</html>
