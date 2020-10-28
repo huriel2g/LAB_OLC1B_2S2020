@@ -1,0 +1,1 @@
+{"version":3,"file":"TablaSimbolos.js","sourceRoot":"","sources":["../../src/ast/TablaSimbolos.ts"],"names":[],"mappings":";;AAEA,MAAa,YAAY;IAKrB,YAAY,QAAqB;QAC7B,IAAI,CAAC,QAAQ,GAAG,QAAQ,CAAC;IAC7B,CAAC;IAED,+BAA+B;IAC/B,GAAG,CAAC,OAAe;QACf,IAAI,CAAC,KAAK,CAAC,IAAI,CAAC,OAAO,CAAC,CAAC;IAC7B,CAAC;CAOJ;AAnBD,oCAmBC"}
